@@ -2,7 +2,7 @@
 
 <b>Contents of this file:</b>
 <ol>
-<li>From the description on dlendswap.</li>
+<li>Description.</li>
 <li>Full file list.</li>
 <li>Example basic workflow.</li>
 <li>Detail mask editing workflow.</li>
@@ -10,7 +10,7 @@
 
 
 
-<b>1. FROM THE DESCRIPTION ON BLENDSWAP:</b>
+<b>1. DESCRIPTION:</b>
 
 <b>WARNING: The files are only compatible with Blender 2.8. Baking is (currently) possible only using Cycles. To view the intended effect use Eevee.</b>
 
