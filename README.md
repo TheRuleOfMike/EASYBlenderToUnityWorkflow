@@ -40,10 +40,14 @@ The Blend files come with two HDRI environments. Both files are CC0 and originat
 
 Contact me if you have any questions.
 Follow me on:
-Twitter: @TheRuleOfMike
-Instagram: theruleofmike
-Artstation: theruleofmike
-DeviantArt: theruleofmike
+
+<a href="https://twitter.com/TheRuleOfMike">Twitter</a>
+
+<a href="https://www.instagram.com/theruleofmike/">Instagram</a>
+
+<a href="https://www.artstation.com/theruleofmike">Artstation</a>
+
+<a href="https://www.deviantart.com/theruleofmike">DeviantArt</a>
 
 More useful stuff and quite a lot of art coming soon.
 
