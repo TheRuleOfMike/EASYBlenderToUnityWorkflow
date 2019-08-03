@@ -1,18 +1,20 @@
 # EASYBlenderToUnityWorkflow
-Contents of this file:
-1. From the description on dlendswap.
-2. Full file list.
-3. Example easic eorkflow.
-4. Detail eask editing workflow.
+
+<b>Contents of this file:</b>
+<ol>
+<li>From the description on dlendswap.</li>
+<li>Full file list.</li>
+<li>Example basic workflow.</li>
+<li>Detail mask editing workflow.</li>
+</ol>
 
 
 
+<b>1. FROM THE DESCRIPTION ON BLENDSWAP:</b>
 
-1. FROM THE DESCRIPTION ON BLENDSWAP:
+<b>WARNING: The files are only compatible with Blender 2.8. Baking is (currently) possible only using Cycles. To view the intended effect use Eevee.</b>
 
-WARNING: The files are only compatible with Blender 2.8. Baking is (currently) possible only using Cycles. To view the intended effect use Eevee.
-
-ABOUT:
+<b>ABOUT:</b>
 
 I found myself in the need of simplifying the process of creating assets for the Unity Standard shader.
 
@@ -49,93 +51,101 @@ Yours truly,
 Michał Klekowicki
 
 
-2. FULL FILE LIST
+<b>2. FULL FILE LIST</b>
 
 Main folder:
 
-UnityRoughnessSetupBlenderStartFile.blend – the Blend file for the Roughness setup of the Unity Standard shader. The colorspace is set to sRGB instead of Filmic to emulate typical Unity visuals. There is a default ExampleObjectWithAtlas mesh and which you can clearly see what’s going on.
+<ul>
+<li>UnityRoughnessSetupBlenderStartFile.blend – the Blend file for the Roughness setup of the Unity Standard shader. The colorspace is set to sRGB instead of Filmic to emulate typical Unity visuals. There is a default ExampleObjectWithAtlas mesh and which you can clearly see what’s going on.
 
-UnitySmoothnessSetupBlenderStartFile.blend – the Blend file for the Smoothness setup of the Unity Standard shader. The colorspace is set to sRGB instead of filmic to emulate typical Unity visuals. There is a default ExampleObjectWithAtlas mesh and which you can clearly see what’s going on.
+<li>UnitySmoothnessSetupBlenderStartFile.blend – the Blend file for the Smoothness setup of the Unity Standard shader. The colorspace is set to sRGB instead of filmic to emulate typical Unity visuals. There is a default ExampleObjectWithAtlas mesh and which you can clearly see what’s going on.
 
-UnityExampleModel.fbx – fbs export of the example model
+<li>UnityExampleModel.fbx – fbs export of the example model
 
-Example_Maps_Collection:
+<li>Example_Maps_Collection:
 
-ExampleMaterial_Albedo.png
+<li>ExampleMaterial_Albedo.png
 
-ExampleMaterial_DetailAlbedo.png
+<li>ExampleMaterial_DetailAlbedo.png
 
-ExampleMaterial_DetailAlbedoAlt.png
+<li>ExampleMaterial_DetailAlbedoAlt.png
 
-ExampleMaterial_DetailMask.jpg
+<li>ExampleMaterial_DetailMask.jpg
 
-ExampleMaterial_DetailMask.png
+<li>ExampleMaterial_DetailMask.png
 
-ExampleMaterial_DetailNormal.png
+<li>ExampleMaterial_DetailNormal.png
 
-ExampleMaterial_DetailNormalAlt.png
+<li>ExampleMaterial_DetailNormalAlt.png
 
-ExampleMaterial_Emission.jpg
+<li>ExampleMaterial_Emission.jpg
 
-ExampleMaterial_Metallic(R)Roughness(G)AO(B).png – the composite map with Metallic, Roughness, and Occlusion packed in to color each channel - use GIMP or other similar software to split the channels to view/edit the maps individually.
+<li>ExampleMaterial_Metallic(R)Roughness(G)AO(B).png – the composite map with Metallic, Roughness, and Occlusion packed in to color each channel - use GIMP or other similar software to split the channels to view/edit the maps individually.
 
-ExampleMaterial_Metallic(R)Smoothness(G)AO(B).png -  the composite map with Metallic, Smoothness, and Occlusion packed in to color each channel - use GIMP or other similar software to split the channels to view/edit the maps individually.
+<li>ExampleMaterial_Metallic(R)Smoothness(G)AO(B).png -  the composite map with Metallic, Smoothness, and Occlusion packed in to color each channel - use GIMP or other similar software to split the channels to view/edit the maps individually.
 
-ExampleMaterial_NormalMap(sRGB_ColorSpace).png
+<li>ExampleMaterial_NormalMap(sRGB_ColorSpace).png
 
-Exported_To_Unity:
-
-(The files were downscaled to 1024x1024 – except for the detail mask - to save space in the zip file)
-
-ExampleMaterial_Albedo.jpg
-
-ExampleMaterial_AO.jpg
-
-ExampleMaterial_DetailAlbedoAlt.jpg
-
-ExampleMaterial_DetailMask.png
-
-ExampleMaterial_DetailNormalAlt.jpg
-
-ExampleMaterial_Emission.jpg
-
-ExampleMaterial_Metallic.jpg
-
-ExampleMaterial_NormalMap(sRGB_ColorSpace).png
-
-ExampleMaterial_Roughness.jpg
-
-ExampleMaterial_Smoothness.jpg
+<li>Exported_To_Unity:
 
 
-3. EXAMPLE BASIC WORKFLOW:
 
-1. Create your high-poly mesh as you normally do.
+<i>(The files were downscaled to 1024x1024 – except for the detail mask - to save space in the zip file)</i>
 
-2. When you assign materials to the separate elements or parts of the mesh, be sure to use duplicates of the StartMaterial. If you wan’t to create more complex single materials, be sure to ALWAYS use the node group as shader nodes when you are mixing.
+<ul>
 
-3. When baking, attach the desired node group output to the Material Output. Be sure to this in every material of the high poly mesh. If somewhere you used the mix shader node to create a more complex material, attach the desired group outputs to the mix node inputs. Be sure to do this to every instance of the group.
+<li>ExampleMaterial_Albedo.jpg
 
-4. Use the BakeMaterial for the low poly mesh. Set up a cage etc.
+<li>ExampleMaterial_AO.jpg
 
-5. Bake the desired map using Cycles. Choose Diffuse and un-select Direct and Indirect lighting. Be sure to bake only color (in the files this is set up as a default state, so if you are using them unchanged just bake “as is”). You can bake Albedo, Metallic, and Roughness using the “Basic 3” option (Albedo will be baked on the Diffuse Color, Metallic on Glossy Color, and Roughness on Emission).
+<li>ExampleMaterial_DetailAlbedoAlt.jpg
 
-6. Bake the Normal Map and Occlusion Map using Cycles. Choose Normal or Ambient Occlusion in the baker.
+<li>ExampleMaterial_DetailMask.png
 
-7. Voila. Rinse and repeat.
+<li>ExampleMaterial_DetailNormalAlt.jpg
 
+<li>ExampleMaterial_Emission.jpg
 
-4. DETAIL MASK EDITING WORKFLOW:
+<li>ExampleMaterial_Metallic.jpg
 
-Thanks to the node group you can also easily paint detail maps (as you would normally paint a texture – just choose the Detail Map slot while painting) BUT you can also modify it with the alpha of the detail mask (as Unity doesn’t support Detail Albedo alpha out-of-the-box, this can be VERY useful).
+<li>ExampleMaterial_NormalMap(sRGB_ColorSpace).png
 
-1. Attach Detail Mask to the group.
+<li>ExampleMaterial_Roughness.jpg
 
-2. Attach the Detail Albedo with an Alpha channel.
+<li>ExampleMaterial_Smoothness.jpg
 
-3. Set up tiling and scaling s you wish using the mapping nodes.
+</ul>
+</ul>
+<b>3. EXAMPLE BASIC WORKFLOW:</b>
 
-4. Attach the BakeDetailMask(DetailAlbedoAlphaApplied) to the Material Output.
+<ol>
+<li>Create your high-poly mesh as you normally do.
 
-5. Bake using the Diffuse (un-select Direct and Indirect lighting. Be sure to bake only color – in the files this is set up as a default state, so if you are using them unchanged just bake “as is”).
+<li>When you assign materials to the separate elements or parts of the mesh, be sure to use duplicates of the StartMaterial. If you wan’t to create more complex single materials, be sure to ALWAYS use the node group as shader nodes when you are mixing.
 
+<li>When baking, attach the desired node group output to the Material Output. Be sure to this in every material of the high poly mesh. If somewhere you used the mix shader node to create a more complex material, attach the desired group outputs to the mix node inputs. Be sure to do this to every instance of the group.
+
+<li>Use the BakeMaterial for the low poly mesh. Set up a cage etc.
+
+<li>Bake the desired map using Cycles. Choose Diffuse and un-select Direct and Indirect lighting. Be sure to bake only color (in the files this is set up as a default state, so if you are using them unchanged just bake “as is”). You can bake Albedo, Metallic, and Roughness using the “Basic 3” option (Albedo will be baked on the Diffuse Color, Metallic on Glossy Color, and Roughness on Emission).
+
+<li>Bake the Normal Map and Occlusion Map using Cycles. Choose Normal or Ambient Occlusion in the baker.
+
+<li>Voila. Rinse and repeat.
+</ol>
+
+<b>4. DETAIL MASK EDITING WORKFLOW:</b>
+
+<i>Thanks to the node group you can also easily paint detail maps (as you would normally paint a texture – just choose the Detail Map slot while painting) BUT you can also modify it with the alpha of the detail mask (as Unity doesn’t support Detail Albedo alpha out-of-the-box, this can be VERY useful).</i>
+
+<ol>
+<li>Attach Detail Mask to the group.
+
+<li>Attach the Detail Albedo with an Alpha channel.
+
+<li>Set up tiling and scaling s you wish using the mapping nodes.
+
+<li>Attach the BakeDetailMask(DetailAlbedoAlphaApplied) to the Material Output.
+
+<li>Bake using the Diffuse (un-select Direct and Indirect lighting. Be sure to bake only color – in the files this is set up as a default state, so if you are using them unchanged just bake “as is”).
+</ol>
