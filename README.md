@@ -32,7 +32,6 @@ What you CAN'T bake and preview is the Height Map due to the lack of this functi
 
 I attach a variety of example baked textures - both for the ExampleMaterial and for the Unity export - and an fbx file to experiment with in Unity.
 
-A file explaining the workflow in a little more detail is also attached.
 
 I work with those files myself when developing for the Unity Standard shader. The Metallic workflow is however universal so if you are working with different engines like Unreal or Godot, this file can also be quite useful for you.
 
@@ -133,7 +132,7 @@ Main folder:
 
 <li>Bake the desired map using Cycles. Choose Diffuse and un-select Direct and Indirect lighting. Be sure to bake only color (in the files this is set up as a default state, so if you are using them unchanged just bake “as is”). You can bake Albedo, Metallic, and Roughness using the “Basic 3” option (Albedo will be baked on the Diffuse Color, Metallic on Glossy Color, and Roughness on Emission).
 
-<li>Bake the Normal Map and Occlusion Map using Cycles. Choose Normal or Ambient Occlusion in the baker.
+<li>Bake the Normal Map and Occlusion Map using Cycles. Choose Normal or Ambient Occlusion in the baker. You can also bake the Ambient Occlusion Map from the Node Group Input with the Diffuse bake. Baking Albedo with AO applied is also possible.
 
 <li>Voila. Rinse and repeat.
 </ol>
